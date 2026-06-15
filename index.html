@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeinab Khaled Selim - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b031a;
+        }
+
+        .neon-glow { box-shadow: 0 0 40px rgba(124, 58, 237, 0.3); }
+        .btn-neon:hover { box-shadow: 0 0 20px rgba(139, 92, 246, 0.6); }
+
+        #welcome-screen { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #0b031a; transition: opacity 0.8s ease; overflow: hidden; }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(139,92,246,0.5);
+            animation: floatParticle var(--dur, 6s) var(--delay, 0s) infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes floatParticle {
+            0%,100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-30px) scale(1.2); opacity: 0.8; }
+        }
+
+        .welcome-title-word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: wordReveal 0.6s forwards;
+        }
+
+        @keyframes wordReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .welcome-bar {
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #7c3aed, #ec4899);
+            animation: barFill 2s 0.3s forwards ease-out;
+            border-radius: 99px;
+        }
+
+        @keyframes barFill { to { width: 200px; } }
+
+        .spin-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(139,92,246,0.2);
+            animation: spinRing var(--spd, 8s) linear infinite;
+        }
+
+        @keyframes spinRing { to { transform: rotate(360deg); } }
+
+        #cursor-glow {
+            position: fixed;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: left 0.15s ease, top 0.15s ease;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
+        .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+        .typed-cursor {
+            display: inline-block;
+            width: 2px; height: 1em;
+            background: #a78bfa;
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        .float-slow { animation: floatSlow 6s ease-in-out infinite; }
+        .float-mid  { animation: floatSlow 4s ease-in-out infinite 1s; }
+
+        @keyframes floatSlow {
+            0%,100% { transform: translateY(0px); }
+            50%      { transform: translateY(-12px); }
+        }
+
+        .count-num { transition: all 0.1s; }
+
+        .card-lift {
+            transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), border-color 0.3s, box-shadow 0.3s;
+        }
+        .card-lift:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 60px rgba(124,58,237,0.25);
+            border-color: rgba(139,92,246,0.6) !important;
+        }
+
+        .grad-border {
+            position: relative;
+        }
+        .grad-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #7c3aed, #ec4899, #7c3aed);
+            background-size: 300% 300%;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s;
+            animation: gradShift 3s linear infinite;
+        }
+        .grad-border:hover::before { opacity: 1; }
+        @keyframes gradShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+        nav a.nav-link { position: relative; }
+        nav a.nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px; left: 0; right: 0;
+            height: 1px;
+            background: #a78bfa;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.25s ease;
+        }
+        nav a.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
+        .delay-1 { transition-delay: 0.1s !important; }
+        .delay-2 { transition-delay: 0.2s !important; }
+        .delay-3 { transition-delay: 0.3s !important; }
+        .delay-4 { transition-delay: 0.4s !important; }
+        .delay-5 { transition-delay: 0.5s !important; }
+
+        .section-heading {
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            margin-top: 8px;
+            height: 3px;
+            border-radius: 99px;
+            background: linear-gradient(90deg, #7c3aed, #ec4899);
+            width: 0;
+            transition: width 1s 0.4s ease;
+        }
+        .section-heading.visible::after { width: 60%; }
+
+        .form-input {
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .form-input:focus {
+            border-color: #7c3aed !important;
+            box-shadow: 0 0 0 3px rgba(124,58,237,0.15);
+            outline: none;
+        }
+
+        .avatar-pulse::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px solid rgba(139,92,246,0.4);
+            animation: pulsRing 2.5s ease-out infinite;
+        }
+        .avatar-pulse::after {
+            content: '';
+            position: absolute;
+            inset: -14px;
+            border-radius: 50%;
+            border: 2px solid rgba(139,92,246,0.15);
+            animation: pulsRing 2.5s ease-out infinite 0.5s;
+        }
+        @keyframes pulsRing {
+            0% { transform: scale(0.95); opacity: 1; }
+            100% { transform: scale(1.1); opacity: 0; }
+        }
+
+        .tech-tag {
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .tech-tag:hover {
+            background: rgba(124,58,237,0.4) !important;
+            color: #e9d5ff !important;
+            transform: translateY(-2px);
+        }
+
+        .proj-thumb {
+            transition: transform 0.4s ease;
+            overflow: hidden;
+        }
+        .project-card:hover .proj-thumb { transform: scale(1.04); }
+
+        #scroll-indicator {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #7c3aed, #ec4899);
+            z-index: 999;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .ripple-btn { position: relative; overflow: hidden; }
+        .ripple-btn .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            transform: scale(0);
+            animation: rippleAnim 0.5s linear;
+            pointer-events: none;
+        }
+        @keyframes rippleAnim {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        @keyframes commentIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .comment-new { animation: commentIn 0.4s ease forwards; }
+
+        .icon-spin { animation: iconSpin 1s ease-out; }
+        @keyframes iconSpin { from { transform: rotate(-180deg) scale(0); opacity: 0; } to { transform: rotate(0deg) scale(1); opacity: 1; } }
+
+        .footer-wave {
+            position: absolute;
+            top: -30px; left: 0; right: 0;
+            height: 30px;
+            background: linear-gradient(to bottom right, transparent 49%, #06020f 50%);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden min-h-screen bg-gradient-to-tr from-[#0b031a] via-[#120726] to-[#1c0b3a]">
+
+<div id="scroll-indicator"></div>
+<div id="cursor-glow"></div>
+
+<!-- WELCOME SCREEN -->
+<div id="welcome-screen">
+    <div class="spin-ring" style="width:400px;height:400px;--spd:12s;top:50%;left:50%;margin:-200px 0 0 -200px;"></div>
+    <div class="spin-ring" style="width:600px;height:600px;--spd:20s;top:50%;left:50%;margin:-300px 0 0 -300px;animation-direction:reverse;"></div>
+
+    <div class="particle" style="width:6px;height:6px;top:20%;left:15%;--dur:5s;--delay:0s;"></div>
+    <div class="particle" style="width:4px;height:4px;top:70%;left:25%;--dur:7s;--delay:1s;"></div>
+    <div class="particle" style="width:8px;height:8px;top:30%;left:80%;--dur:6s;--delay:0.5s;"></div>
+    <div class="particle" style="width:5px;height:5px;top:80%;left:70%;--dur:4s;--delay:2s;"></div>
+    <div class="particle" style="width:3px;height:3px;top:50%;left:90%;--dur:8s;--delay:1.5s;"></div>
+
+    <div class="flex space-x-6 text-3xl text-purple-400 mb-8">
+        <i class="fas fa-server icon-spin" style="animation-delay:0.2s;"></i>
+        <i class="fas fa-database icon-spin" style="animation-delay:0.4s;"></i>
+        <i class="fab fa-python icon-spin" style="animation-delay:0.6s;"></i>
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide text-center mb-2">
+        <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400" style="animation-delay:0.3s;">Welcome</span>
+        <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400" style="animation-delay:0.5s;"> To</span>
+        <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400" style="animation-delay:0.7s;"> My</span>
+        <br>
+        <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-400" style="animation-delay:0.9s;">Portfolio</span>
+    </h1>
+
+    <p class="text-purple-400 text-sm mt-4 tracking-widest opacity-0" style="animation: wordReveal 0.5s 1.3s forwards;">Zeinab Khaled</p>
+
+    <div class="mt-8 w-48 h-0.5 bg-purple-950 rounded-full overflow-hidden">
+        <div class="welcome-bar"></div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content" class="opacity-0 transition-opacity duration-1000 hidden">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-[#0b031a]/80 backdrop-blur-md border-b border-purple-950/40 px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500">ZR</div>
+        <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+            <a href="#home"      class="nav-link hover:text-purple-400 transition">Home</a>
+            <a href="#about"     class="nav-link hover:text-purple-400 transition">About</a>
+            <a href="#portfolio" class="nav-link hover:text-purple-400 transition">Portfolio</a>
+            <a href="#contact"   class="nav-link hover:text-purple-400 transition">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen pt-28 px-6 md:px-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        
+        <div class="flex-1 space-y-6">
+            <span class="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Open to Opportunities
+            </span>
+
+            <h1 class="reveal delay-1 text-5xl md:text-7xl font-extrabold tracking-tight">
+                Backend <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-500 to-purple-500">Developer</span>
+            </h1>
+
+            <p class="reveal delay-2 text-purple-300 font-medium text-sm tracking-wide">
+                <span id="typed-role"></span><span class="typed-cursor"></span>
+            </p>
+
+            <p class="reveal delay-3 text-gray-400 max-w-lg leading-relaxed text-sm">
+
+               An ambitious BIS Graduate and Backend Engineer specializing in building scalable RESTful APIs, heavy database architectures, and third-party integrations with PHP & Laravel. Passionate about turning complex business logic into clean code, while expanding into Data Analytics to deliver data-driven solutions.
+
+            </p>
+
+            <!-- <div class="reveal delay-4 flex flex-wrap gap-2 pt-2">
+                <span class="tech-tag bg-[#1b0e35] text-purple-300 px-3 py-1 rounded-md text-xs border border-purple-900/40">PHP</span>
+                <span class="tech-tag bg-[#1b0e35] text-purple-300 px-3 py-1 rounded-md text-xs border border-purple-900/40">Laravel</span>
+                <span class="tech-tag bg-[#1b0e35] text-purple-300 px-3 py-1 rounded-md text-xs border border-purple-900/40">Python</span>
+                <span class="tech-tag bg-[#1b0e35] text-purple-300 px-3 py-1 rounded-md text-xs border border-purple-900/40">MySQL</span>
+                <span class="tech-tag bg-[#1b0e35] text-purple-300 px-3 py-1 rounded-md text-xs border border-purple-900/40">REST APIs</span>
+                <span class="tech-tag bg-[#1b0e35] text-purple-300 px-3 py-1 rounded-md text-xs border border-purple-900/40">Docker</span>
+            </div> -->
+
+            <div class="reveal delay-5 flex gap-4 pt-4">
+                <a href="#portfolio" class="ripple-btn btn-neon bg-purple-600 hover:bg-purple-700 text-white font-semibold text-sm px-6 py-3 rounded-xl transition flex items-center gap-2">
+                    My Projects <i class="fas fa-external-link-alt text-xs"></i>
+                </a>
+                <a href="#contact" class="ripple-btn bg-[#160b2d] hover:bg-[#211044] text-gray-300 font-semibold text-sm px-6 py-3 rounded-xl border border-purple-900/40 transition flex items-center gap-2">
+                    Contact <i class="far fa-envelope"></i>
+                </a>
+            </div>
+             <!-- <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+                        <a href="#" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium"><i class="fab fa-linkedin text-blue-500 mr-1"></i> LinkedIn</a>
+                        <a href="#" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium"><i class="fab fa-github text-white mr-1"></i> GitHub</a>
+                        <a href="#" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium"><i class="fab fa-instagram text-purple-500 mr-1"></i> Instagram</a>
+                    </div> -->
+        </div>
+       
+
+        <!-- Hero card -->
+        <div class="flex-1 flex justify-center relative">
+            <div class="absolute w-72 h-72 bg-purple-600/20 rounded-full blur-3xl -top-10 -left-10"></div>
+            <div class="float-slow bg-[#130929]/60 p-8 rounded-3xl border border-purple-900/40 neon-glow max-w-md w-full relative z-10 backdrop-blur-sm reveal-right">
+                <div class="flex items-center justify-between mb-6 border-b border-purple-950 pb-4">
+                    <div class="flex gap-2">
+                        <span class="w-3 h-3 rounded-full bg-red-500 cursor-pointer hover:scale-125 transition-transform"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500 cursor-pointer hover:scale-125 transition-transform"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500 cursor-pointer hover:scale-125 transition-transform"></span>
+                    </div>
+                    <i class="fas fa-server text-purple-400 float-mid"></i>
+                </div>
+                <div class="space-y-3 text-xs font-mono">
+                    <div class="text-green-400">$ php artisan serve</div>
+                    <div class="text-gray-500">Starting Laravel development server...</div>
+                    <div class="text-purple-300">✓ Server running on <span class="text-purple-400">http://127.0.0.1:8000</span></div>
+                    <div class="text-gray-500">✓ Database connected</div>
+                    <div class="text-gray-500">✓ API routes loaded</div>
+                    <div class="mt-4 h-px bg-purple-950/60"></div>
+                    <div class="text-amber-300 pt-1">GET /api/v1/zeinab → 200 OK</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-purple-950/40 my-12">
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="text-center space-y-2 mb-16">
+            <h2 class="section-heading reveal text-4xl font-bold">About Me</h2>
+            <p class="reveal delay-1 text-purple-400 text-sm"> Crafting backend systems that power the digital world</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div class="space-y-6 reveal-left">
+                <h3 class="text-2xl font-bold text-white">Hello, I'm </h3>
+                    <span class="text-2xl font-bold text-white">Zeinab Khaled Selim </span> 
+            
+               <p class="text-gray-400 leading-relaxed text-sm">
+                  A <span class="text-purple-400 font-medium">BIS Graduate</span> and Backend Engineer who blends business intelligence with technical power. I specialize in engineering advanced web solutions using <span class="text-purple-400 font-medium">PHP & Laravel</span>, architecting secure RESTful APIs, and optimizing high-performance relational databases.
+                 </p>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                  Driven by data, I am expanding my expertise into <span class="text-purple-400 font-medium">Data Analysis</span> — leveraging Python and SQL to extract strategic business insights. I thrive on turning complex logic into clean, production-ready code that helps systems scale and endure.
+                </p>
+                <div class="flex gap-4">
+                   <a href="Zeinab_Khaled_Selim_CV (1).pdf" download="Zeinab_Khaled_Backend_Developer_CV" class="ripple-btn bg-purple-600 hover:bg-purple-700 text-sm font-semibold px-5 py-2.5 rounded-xl transition flex items-center gap-2 inline-flex">
+                         <i class="fas fa-download"></i> Download CV
+                     </a>
+                    <a href="#portfolio" class="ripple-btn bg-[#160b2d] border border-purple-900/40 text-sm font-semibold px-5 py-2.5 rounded-xl text-gray-300 hover:bg-[#211044] transition flex items-center gap-2">
+                        View Projects
+                    </a>
+                </div>
+            </div>
+
+           <div class="flex justify-center reveal-right">
+    <div class="relative avatar-pulse" style="width: 288px; height: 288px;">
+        <div class="w-72 h-72 rounded-full bg-gradient-to-b from-purple-600 to-indigo-900 flex items-center justify-center p-1 shadow-[0_0_40px_rgba(124,58,237,0.5)]">
+            <div class="w-full h-full bg-[#0b031a] rounded-full flex items-center justify-center overflow-hidden relative">
+                
+                <img src="1.jpg" class="w-full h-full object-cover rounded-full">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent pointer-events-none"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto text-center">
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-2xl border border-purple-950 reveal delay-1">
+                <div class="text-2xl md:text-3xl font-extrabold text-purple-400 count-num" data-target="4">0</div>
+                <div class="text-xs text-gray-400 mt-1">Projects</div>
+            </div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-2xl border border-purple-950 reveal delay-2">
+                <div class="text-2xl md:text-3xl font-extrabold text-purple-400 count-num" data-target="5">0</div>
+                <div class="text-xs text-gray-400 mt-1">Certificates</div>
+            </div>
+           <div class="card-lift grad-border bg-[#110624] p-4 rounded-2xl border border-purple-950 reveal delay-3">
+                <div class="text-2xl md:text-3xl font-extrabold text-purple-400 count-num" data-target="1">0</div>
+                <div class="text-xs text-gray-400 mt-1">Year of Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-purple-950/40 my-12">
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-20 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="text-center space-y-2 mb-12">
+            <h2 class="section-heading reveal text-4xl font-bold">Portfolio Showcase</h2>
+            <p class="reveal delay-1 text-gray-400 text-sm max-w-xl mx-auto">A collection of backend projects, data science work, and technical achievements that reflect my journey so far.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="reveal flex justify-center gap-2 mb-12 bg-[#110624] p-1.5 rounded-xl max-w-md mx-auto border border-purple-950">
+            <button onclick="switchTab('projects')" id="tab-projects" class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all duration-300 bg-purple-600 text-white flex items-center justify-center gap-2">
+                <i class="fas fa-code-branch"></i> Projects
+            </button>
+            <button onclick="switchTab('certificates')" id="tab-certificates" class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all duration-300 text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                <i class="fas fa-certificate"></i> Certificates
+            </button>
+            <button onclick="switchTab('tech')" id="tab-tech" class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all duration-300 text-gray-400 hover:text-white flex items-center justify-center gap-2">
+                <i class="fas fa-cubes"></i> Tech Stack
+            </button>
+        </div>
+
+
+
+
+
+        <!-- Projects grid -->
+        <!-- <div id="content-projects" class="grid md:grid-cols-3 gap-6 transition-all duration-500">
+            <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-1">
+                <div class="space-y-3">
+                    <div class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                        <i class="fas fa-fire text-4xl text-red-400/60"></i>
+                        <span class="text-[10px] text-gray-500 font-mono">Laravel + MySQL</span>
+                    </div>
+                    <h4 class="text-lg font-bold">Laravel Backend App</h4>
+                    <p class="text-xs text-gray-400 line-clamp-2">A full backend application built with Laravel framework — including authentication, routing, controllers, models, and database migrations.</p>
+                </div>
+                <div class="flex justify-between items-center pt-6">
+                    <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
+                    <button onclick="openProjectDetail('Laravel Backend App')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                </div>
+            </div>
+
+            <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-2">
+                <div class="space-y-3">
+                    <div class="proj-thumb h-40 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 p-4 text-center gap-2">
+                        <i class="fas fa-plug text-3xl text-purple-400"></i>
+                        <p class="text-[10px] font-semibold text-purple-300 font-mono">PHP REST API</p>
+                    </div>
+                    <h4 class="text-lg font-bold">RESTful API with Laravel</h4>
+                    <p class="text-xs text-gray-400 line-clamp-2">A clean REST API built with Laravel — handling CRUD operations, JWT authentication, and structured JSON responses.</p>
+                </div>
+                <div class="flex justify-between items-center pt-6">
+                    <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
+                    <button onclick="openProjectDetail('RESTful API with Laravel')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                </div>
+            </div>
+
+            <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-3">
+                <div class="space-y-3">
+                    <div class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                        <i class="fas fa-chart-line text-4xl text-amber-300/60"></i>
+                        <span class="text-[10px] text-gray-500 font-mono">Python + Pandas</span>
+                    </div>
+                    <h4 class="text-lg font-bold">Data Analysis Project</h4>
+                    <p class="text-xs text-gray-400 line-clamp-2">Analyzing real-world datasets using Python, Pandas, and Matplotlib — extracting meaningful insights and visualizing trends.</p>
+                </div>
+                <div class="flex justify-between items-center pt-6">
+                    <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
+                    <button onclick="openProjectDetail('Data Analysis Project')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                </div>
+            </div>
+        </div> -->
+
+<div id="content-projects" class="grid md:grid-cols-3 gap-6 transition-all duration-500">
+            
+            <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-1">
+                <div class="space-y-3">
+                    <div class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                        <i class="fas fa-dumbbell text-4xl text-purple-400"></i>
+                        <span class="text-[10px] text-gray-500 font-mono">Laravel + Node.js + AI</span>
+                    </div>
+                    <h4 class="text-lg font-bold">AI-Powered Fitness Tracker</h4>
+                    <p class="text-xs text-gray-400 line-clamp-2">An intelligent fitness system with real-time motion analysis, multi-disciplinary backend architecture, and seamless API integrations.</p>
+                </div>
+                <div class="flex justify-between items-center pt-6">
+                    <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
+                    <button onclick="openProjectDetail('fitness')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                </div>
+            </div>
+
+            <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-2">
+                <div class="space-y-3">
+                    <div class="proj-thumb h-40 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 p-4 text-center gap-2">
+                        <i class="fas fa-shopping-cart text-3xl text-indigo-400"></i>
+                        <p class="text-[10px] font-semibold text-purple-300 font-mono">PHP + Laravel + MySQL</p>
+                    </div>
+                    <h4 class="text-lg font-bold">Full-Stack E-Commerce Platform</h4>
+                    <p class="text-xs text-gray-400 line-clamp-2">A complete commercial e-commerce engine featuring secure payment checkouts, advanced cart management, and full business logic infrastructure.</p>
+                </div>
+                <div class="flex justify-between items-center pt-6">
+                    <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
+                    <button onclick="openProjectDetail('ecommerce')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                </div>
+            </div>
+
+            <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-3">
+                <div class="space-y-3">
+                    <div class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                        <i class="fas fa-chart-pie text-4xl text-amber-400"></i>
+                        <span class="text-[10px] text-gray-500 font-mono">B2B API + Analytics</span>
+                    </div>
+                    <h4 class="text-lg font-bold">Logistics & Analytics API</h4>
+                    <p class="text-xs text-gray-400 line-clamp-2">A high-throughput B2B shipping integration API built to stress-test 5,000+ records, generating automated Excel reports and webhooks.</p>
+                </div>
+                <div class="flex justify-between items-center pt-6">
+                    <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
+                    <button onclick="openProjectDetail('logistics')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Certificates -->
+        <div id="content-certificates" class="grid md:grid-cols-3 gap-6 transition-all duration-500 hidden">
+            <div class="card-lift grad-border bg-[#110624] p-5 rounded-2xl border border-purple-950 flex flex-col items-center text-center reveal delay-1">
+                <i class="fas fa-ribbon text-4xl text-amber-300 mb-4"></i>
+                <h4 class="font-bold text-sm">Add Your Certificate Name</h4>
+                <p class="text-xs text-purple-400 mt-1">Issuer / Platform</p>
+            </div>
+            <div class="card-lift grad-border bg-[#110624] p-5 rounded-2xl border border-purple-950 flex flex-col items-center text-center reveal delay-2">
+                <i class="fas fa-ribbon text-4xl text-amber-300 mb-4"></i>
+                <h4 class="font-bold text-sm">Add Your Certificate Name</h4>
+                <p class="text-xs text-purple-400 mt-1">Issuer / Platform</p>
+            </div>
+            <div class="card-lift grad-border bg-[#110624] p-5 rounded-2xl border border-purple-950 flex flex-col items-center text-center reveal delay-3">
+                <i class="fas fa-ribbon text-4xl text-amber-300 mb-4"></i>
+                <h4 class="font-bold text-sm">Add Your Certificate Name</h4>
+                <p class="text-xs text-purple-400 mt-1">Issuer / Platform</p>
+            </div>
+        </div>
+
+        <!-- Tech stack -->
+        <div id="content-tech" class="grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-500 hidden">
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1"><i class="fab fa-php text-indigo-400 text-xl"></i><span class="text-sm font-medium">PHP</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2"><i class="fas fa-fire text-red-400 text-xl"></i><span class="text-sm font-medium">Laravel</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3"><i class="fas fa-cubes text-purple-400 text-xl"></i><span class="text-sm font-medium">OOP</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3"><i class="fab fa-python text-amber-300 text-xl"></i><span class="text-sm font-medium">Python</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4"><i class="fab fa-js text-yellow-400 text-xl"></i><span class="text-sm font-medium">JavaScript</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1"><i class="fab fa-html5 text-orange-400 text-xl"></i><span class="text-sm font-medium">HTML & CSS</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2"><i class="fas fa-database text-blue-400 text-xl"></i><span class="text-sm font-medium">MySQL / SQL</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3"><i class="fas fa-plug text-purple-400 text-xl"></i><span class="text-sm font-medium">REST APIs</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4"><i class="fab fa-linux text-gray-300 text-xl"></i><span class="text-sm font-medium">Linux / Server</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1"><i class="fab fa-docker text-blue-500 text-xl"></i><span class="text-sm font-medium">Docker</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2"><i class="fas fa-chart-bar text-purple-400 text-xl"></i><span class="text-sm font-medium">Data Analysis</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3"><i class="fab fa-git-alt text-orange-500 text-xl"></i><span class="text-sm font-medium">Git</span></div>
+            <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4"><i class="fab fa-node-js text-green-500 text-xl"></i><span class="text-sm font-medium">Node.js</span></div>
+        </div>
+
+        <!-- Project detail panel -->
+        <div id="project-detail-panel" class="bg-[#110624] border border-purple-950 rounded-3xl p-6 md:p-10 transition-all duration-500 hidden relative">
+            <button onclick="closeProjectDetail()" class="ripple-btn text-xs font-semibold bg-purple-950/60 text-purple-300 px-4 py-2 rounded-xl border border-purple-900/40 hover:bg-purple-900/40 transition mb-6 flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </button>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <h3 id="detail-title" class="text-3xl font-extrabold text-white">Project</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">A backend project built with Laravel & PHP — featuring clean architecture, secure REST API endpoints, database migrations with MySQL, and Dockerized deployment on Linux server.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="card-lift bg-[#0b031a] p-4 rounded-xl border border-purple-950/60">
+                            <span class="text-2xl font-bold text-purple-400">5+</span>
+                            <p class="text-xs text-gray-400 mt-1">Technologies Used</p>
+                        </div>
+                        <div class="card-lift bg-[#0b031a] p-4 rounded-xl border border-purple-950/60">
+                            <span class="text-2xl font-bold text-purple-400">3</span>
+                            <p class="text-xs text-gray-400 mt-1">Core Features</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <button class="ripple-btn bg-purple-600 hover:bg-purple-700 text-xs font-semibold px-4 py-2.5 rounded-xl transition">Live Demo</button>
+                        <a id="detail-github" href="#" target="_blank" class="ripple-btn bg-[#160b2d] border border-purple-900/40 text-xs font-semibold px-4 py-2.5 rounded-xl text-gray-300 hover:bg-[#211044] transition flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-[#0b031a] p-6 rounded-2xl border border-purple-950/60">
+                        <h5 class="text-sm font-bold text-purple-400 mb-4 flex items-center gap-2"><i class="fas fa-star text-xs"></i> Key Features</h5>
+                        <ul class="text-xs text-gray-300 space-y-3 list-disc pl-4">
+                            <li>Clean and well-structured backend architecture.</li>
+                            <li>Efficient database queries and data modeling.</li>
+                            <li>Secure authentication and authorization.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-sm font-bold text-gray-300 mb-3">Technologies Used</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">PHP</span>
+                            <span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">Laravel</span>
+                            <span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">MySQL</span>
+                            <span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">REST API</span>
+                            <span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">Docker</span>
+                            <span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <hr class="border-purple-950/40 my-12">
+
+    <!-- CONTACT -->
+ <section id="contact" class="py-20 px-6 md:px-20 max-w-7xl mx-auto">
+    <div class="text-center space-y-2 mb-16">
+        <h2 class="section-heading reveal text-4xl font-bold text-white">Contact Me</h2>
+        <p class="reveal delay-1 text-gray-400 text-sm">Have a project in mind or want to collaborate? Let's talk!</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div class="space-y-6 reveal-left">
+            <div class="bg-[#110624]/60 p-6 rounded-2xl border border-purple-950 backdrop-blur-sm">
+                <h3 class="text-xl font-bold mb-4 text-white">Get in Touch</h3>
+                <form class="space-y-4" onsubmit="event.preventDefault(); sendMessage()">
+                    <input type="text" id="contact-name" placeholder="Your Name" required class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-600 transition">
+                    <input type="email" id="contact-email" placeholder="Your Email" required class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-600 transition">
+                    <textarea id="contact-msg" placeholder="Your Message" rows="4" required class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-600 transition"></textarea>
+                    <button type="submit" class="ripple-btn w-full bg-purple-600 hover:bg-purple-700 text-sm font-semibold py-3 rounded-xl transition flex items-center justify-center gap-2 text-white">
+                        <span id="send-text">Send Message</span> <i class="fas fa-paper-plane text-xs" id="send-icon"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-[#110624]/60 p-6 rounded-2xl border border-purple-950">
+                <h4 class="text-sm font-bold text-gray-300 mb-4">Connect With Me</h4>
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                    <a href="https://www.linkedin.com/in/zeinab-khaled-9a5ab8416/" target="_blank" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium text-gray-300"><i class="fab fa-linkedin text-blue-500 mr-1"></i> LinkedIn</a>
+                    <a href="https://github.com/zeinak112" target="_blank" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium text-gray-300"><i class="fab fa-github text-white mr-1"></i> GitHub</a>
+                    <a href="https://www.instagram.com/_z.r__________" target="_blank" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium text-gray-300"><i class="fab fa-instagram text-purple-500 mr-1"></i> Instagram</a>
+                    <a href="https://wa.me/01093887083" target="_blank" class="card-lift p-3 bg-[#0b031a] rounded-xl border border-purple-950 text-center hover:border-purple-600 transition block font-medium text-gray-300"><i class="fab fa-whatsapp text-green-500 mr-1"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#110624]/60 p-6 rounded-2xl border border-purple-950 backdrop-blur-sm space-y-6 reveal-right">
+            <div class="flex justify-between items-center border-b border-purple-950 pb-3">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="far fa-comments"></i> Comments</h3>
+                <span id="comment-count" class="bg-purple-900/50 border border-purple-900 text-purple-300 text-xs px-2 py-0.5 rounded-full font-bold transition-all duration-300">1</span>
+            </div>
+            <div id="comments-list" class="space-y-4 max-h-60 overflow-y-auto pr-2">
+                <div class="comment-item bg-[#0b031a] p-4 rounded-xl border border-purple-950/60 flex justify-between items-start">
+                    <div class="flex gap-3 items-start">
+                        <div class="w-8 h-8 rounded-full bg-purple-900 flex items-center justify-center text-xs font-bold text-purple-300">Z</div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-white">Zeinab</span>
+                                <span class="bg-purple-900/40 text-purple-400 text-[10px] px-1.5 rounded border border-purple-900/30">Owner</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">Welcome to my portfolio! Feel free to reach out 🚀</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="comment-form" onsubmit="addComment(event)" class="space-y-3 pt-4 border-t border-purple-950">
+                <input type="text" id="comment-name" placeholder="Name *" required class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-purple-600">
+                <textarea id="comment-msg" placeholder="Write your message here... *" required rows="3" class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-purple-600"></textarea>
+                <div class="flex justify-end">
+                    <button type="submit" class="ripple-btn bg-purple-600 hover:bg-purple-700 text-xs font-semibold px-4 py-2 rounded-xl transition flex items-center gap-1.5 text-white">
+                        <i class="far fa-paper-plane"></i> Post Comment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("v1ysTR-p9FcYcwe2p"); 
+   })();
+</script>
+
+    <!-- FOOTER -->
+    <footer class="relative py-8 text-center text-xs text-gray-500 border-t border-purple-950/40 bg-[#06020f]">
+        <div class="footer-wave"></div>
+        &copy; 2026 Zeinab Khaled Selim. All Rights Reserved. <span class="text-purple-600">✦</span>
+    </footer>
+
+</div>
+
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const ws = document.getElementById('welcome-screen');
+        const mc = document.getElementById('main-content');
+        ws.style.opacity = '0';
+        mc.classList.remove('hidden');
+        setTimeout(() => {
+            ws.remove();
+            mc.classList.remove('opacity-0');
+            mc.classList.add('opacity-100');
+            initScrollReveal();
+            initCounters();
+            startTyped();
+        }, 800);
+    }, 2400);
+});
+
+const cursorGlow = document.getElementById('cursor-glow');
+document.addEventListener('mousemove', e => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top  = e.clientY + 'px';
+});
+
+window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('scroll-indicator').style.width = scrolled + '%';
+});
+
+function initScrollReveal() {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+                const el = e.target;
+                setTimeout(() => {
+                    el.classList.add('visible');
+                    if (el.classList.contains('section-heading')) el.classList.add('visible');
+                }, i * 60);
+                obs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .section-heading').forEach(el => obs.observe(el));
+}
+
+function initCounters() {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { animateCount(e.target); obs.unobserve(e.target); }
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.count-num').forEach(el => obs.observe(el));
+}
+
+function animateCount(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1200;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { el.textContent = target; clearInterval(timer); }
+        else el.textContent = Math.floor(current);
+    }, 16);
+}
+
+function startTyped() {
+    const roles = ['Backend Developer ', 'PHP & Laravel Dev ', 'Data Analysis Enthusiast ', 'API Builder '];
+    let ri = 0, ci = 0, del = false;
+    const el = document.getElementById('typed-role');
+    if (!el) return;
+    function loop() {
+        const cur = roles[ri];
+        if (!del) {
+            el.textContent = cur.slice(0, ++ci);
+            if (ci === cur.length) { del = true; setTimeout(loop, 1800); return; }
+        } else {
+            el.textContent = cur.slice(0, --ci);
+            if (ci === 0) { del = false; ri = (ri + 1) % roles.length; }
+        }
+        setTimeout(loop, del ? 45 : 75);
+    }
+    loop();
+}
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('.ripple-btn');
+    if (!btn) return;
+    const rect = btn.getBoundingClientRect();
+    const r = document.createElement('span');
+    r.className = 'ripple-effect';
+    const size = Math.max(rect.width, rect.height);
+    r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+    btn.appendChild(r);
+    setTimeout(() => r.remove(), 500);
+});
+
+function switchTab(name) {
+    ['projects','certificates','tech'].forEach(t => {
+        const c = document.getElementById('content-' + t);
+        const b = document.getElementById('tab-' + t);
+        c.classList.add('hidden');
+        b.classList.remove('bg-purple-600','text-white');
+        b.classList.add('text-gray-400');
+    });
+    document.getElementById('project-detail-panel').classList.add('hidden');
+    document.getElementById('content-' + name).classList.remove('hidden');
+    document.getElementById('tab-' + name).classList.add('bg-purple-600','text-white');
+    document.getElementById('tab-' + name).classList.remove('text-gray-400');
+    setTimeout(() => {
+        document.querySelectorAll('#content-' + name + ' .reveal').forEach(el => {
+            el.classList.remove('visible');
+            setTimeout(() => el.classList.add('visible'), 50);
+        });
+    }, 50);
+}
+
+
+const projectData = {
+    fitness: {
+        title: "AI-Powered Fitness Tracker",
+        description: "An advanced fitness tracking application developed as a major graduation project. It leverages real-time motion analysis to correct exercise form instantly. Built with a multi-disciplinary approach, combining a high-performance backend with external services for cutting-edge user experiences.",
+        techCount: "4+",
+        featuresCount: "3",
+        github: "https://github.com/zeinak112/gp-backend", 
+        features: [
+            "Real-time form correction integration using motion data analysis.",
+            "Multi-disciplinary architecture coordinating Laravel APIs and external microservices.",
+            "Robust authentication and real-time state tracking for active user sessions."
+        ],
+        tags: ["PHP 8.2", "Laravel 12", "MongoDB", "Node.js Integration", "RESTful API","Postman"]
+    },
+    ecommerce: {
+        title: "Full-Stack E-Commerce Platform",
+        description: "A complete commercial web application designed to simulate real-world e-commerce ecosystems. It handles everything from complex shopping cart structures to secure order generation, focusing heavily on clean business logic and secure database design.",
+        techCount: "5+",
+        featuresCount: "4",
+        github: "https://github.com/zeinak112/ecommerce-native-php", 
+        features: [
+            "Complete product catalog with dynamic filtering and categorization.",
+            "Advanced database structure handling user transactions, pricing, and histories securely.",
+            "Robust request validation and secure session-based/token checkout mechanics."
+        ],
+        tags: ["PHP", "MySQL", "phpMyAdmin", "REST API"]
+    },
+    logistics: {
+        title: "Logistics & Analytics API Engine",
+        description: "A specialized B2B logistics and analytics service built to receive external automated orders from platforms like WordPress and Shopify via high-performance APIs. Engineered to handle large-scale database stresses and output advanced administrative data visualizations.",
+        techCount: "6+",
+        featuresCount: "4",
+        github: "https://github.com/zeinak112/logistics-analytics-api", 
+        features: [
+            "Seamless third-party API webhook ingestion designed for massive order scale.",
+            "Stress-tested database design capable of handling 5,000+ heavy record entries efficiently.",
+            "Automated backend analytics rendering deep financial insights and Excel/PDF reports."
+        ],
+        tags: ["PHP 8.2", "Laravel 12", "MySQL", "Webhooks Integration", "Data Analytics", "Postman"]
+    }
+};
+
+
+function openProjectDetail(id) {
+    const project = projectData[id];
+    
+    if (!project) {
+        document.getElementById('detail-title').innerText = id;
+    } else {
+       
+        document.getElementById('detail-title').innerText = project.title;
+        document.querySelector('#project-detail-panel p').innerText = project.description;
+        
+        
+        const counters = document.querySelectorAll('#project-detail-panel .card-lift span');
+        if(counters.length >= 2) {
+            counters[0].innerText = project.techCount;
+            counters[1].innerText = project.featuresCount;
+        }
+
+        
+        const githubLink = document.getElementById('detail-github');
+        if (githubLink) {
+            githubLink.setAttribute('href', project.github);
+            
+            githubLink.onclick = (e) => {
+                e.stopPropagation(); 
+                window.open(project.github, '_blank');
+                return false;
+            };
+        }
+
+        
+        const featuresList = document.querySelector('#project-detail-panel ul');
+        if(featuresList) {
+            featuresList.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
+        }
+
+       
+        const tagsContainer = document.querySelector('#project-detail-panel .flex-wrap');
+        if(tagsContainer) {
+            tagsContainer.innerHTML = project.tags.map(t => `<span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">${t}</span>`).join('');
+        }
+    }
+
+    
+    document.getElementById('content-projects').classList.add('hidden');
+    const panel = document.getElementById('project-detail-panel');
+    panel.classList.remove('hidden');
+    panel.style.opacity = '0';
+    panel.style.transform = 'translateY(20px)';
+    requestAnimationFrame(() => {
+        panel.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        panel.style.opacity = '1';
+        panel.style.transform = 'translateY(0)';
+    });
+    panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+
+function closeProjectDetail() {
+    document.getElementById('project-detail-panel').classList.add('hidden');
+    document.getElementById('content-projects').classList.remove('hidden');
+}
+
+
+
+function sendMessage() {
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const msg = document.getElementById('contact-msg').value.trim();
+    
+    const btn = document.getElementById('send-text');
+    const icon = document.getElementById('send-icon');
+    
+    if(!name || !email || !msg) return;
+
+    
+    btn.textContent = 'Sending...';
+    icon.className = 'fas fa-spinner fa-spin text-xs';
+
+    
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: msg
+    };
+
+   
+    emailjs.send('service_8jdc0gf', 'template_b1l23n9', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+           
+            btn.textContent = 'Sent!';
+            icon.className = 'fas fa-check text-xs text-green-400';
+            
+          
+            document.getElementById('contact-name').value = '';
+            document.getElementById('contact-email').value = '';
+            document.getElementById('contact-msg').value = '';
+        }, function(error) {
+            console.log('FAILED...', error);
+            btn.textContent = 'Error!';
+            icon.className = 'fas fa-exclamation-triangle text-xs text-red-400';
+        })
+        .finally(() => {
+           
+            setTimeout(() => {
+                btn.textContent = 'Send Message';
+                icon.className = 'fas fa-paper-plane text-xs';
+            }, 2000);
+        });
+}
+
+
+let commentCount = 1;
+function addComment(e) {
+    e.preventDefault();
+    const nameInput = document.getElementById('comment-name');
+    const msgInput  = document.getElementById('comment-msg');
+    const list      = document.getElementById('comments-list');
+    
+    if (!nameInput.value.trim() || !msgInput.value.trim()) return;
+
+    const colors = ['bg-purple-600','bg-purple-600','bg-purple-600','bg-emerald-600','bg-amber-600'];
+    const color  = colors[Math.floor(Math.random() * colors.length)];
+
+    
+    const commentId = 'comment-' + Date.now();
+
+    const div = document.createElement('div');
+    div.id = commentId; 
+    div.className = `comment-new bg-[#0b031a] p-4 rounded-xl border border-purple-950/60 flex justify-between items-start transition-all duration-300`;
+    
+    div.innerHTML = `
+        <div class="flex gap-3 items-start">
+            <div class="w-8 h-8 rounded-full ${color} flex items-center justify-center text-xs font-bold text-white">
+                ${nameInput.value.charAt(0).toUpperCase()}
+            </div>
+            <div>
+                <span class="text-xs font-bold text-white">${nameInput.value}</span>
+                <p class="text-xs text-gray-400 mt-1">${msgInput.value}</p>
+            </div>
+        </div>
+        <button onclick="deleteComment('${commentId}')" class="text-gray-500 hover:text-red-500 transition-colors pl-2 pt-0.5">
+            <i class="fas fa-trash-alt text-xs"></i>
+        </button>`;
+        
+    list.appendChild(div);
+
+    
+    commentCount++;
+    const counter = document.getElementById('comment-count');
+    counter.textContent = commentCount;
+    counter.style.transform = 'scale(1.4)';
+    setTimeout(() => counter.style.transform = 'scale(1)', 300);
+
+    nameInput.value = '';
+    msgInput.value  = '';
+    list.scrollTop  = list.scrollHeight;
+}
+
+
+function deleteComment(commentId) {
+    const commentElement = document.getElementById(commentId);
+    if (commentElement) {
+        commentElement.style.opacity = '0';
+        commentElement.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+            commentElement.remove();
+            commentCount = Math.max(0, commentCount - 1); 
+            const counter = document.getElementById('comment-count');
+            counter.textContent = commentCount;
+            
+           
+            counter.style.transform = 'scale(0.8)';
+            setTimeout(() => counter.style.transform = 'scale(1)', 200);
+        }, 300);
+    }
+}
+    const commentElement = document.getElementById(commentId);
+    if (commentElement) {
+        commentElement.style.opacity = '0';
+        commentElement.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+            commentElement.remove();
+            commentCount = Math.max(0, commentCount - 1);
+            const counter = document.getElementById('comment-count');
+            counter.textContent = commentCount;
+            
+          
+            counter.style.transform = 'scale(0.8)';
+            setTimeout(() => counter.style.transform = 'scale(1)', 200);
+        }, 300);
+    }
+
+</script>
+</body>
+</html>
