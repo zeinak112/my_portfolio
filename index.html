@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeinab Khaled Selim - Data Analyst Portfolio</title>
+    <title>Zeinab Elhusseiny - Data Analyst Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
@@ -46,17 +46,8 @@
         }
 
         @keyframes floatParticle {
-
-            0%,
-            100% {
-                transform: translateY(0px) scale(1);
-                opacity: 0.3;
-            }
-
-            50% {
-                transform: translateY(-30px) scale(1.2);
-                opacity: 0.8;
-            }
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-30px) scale(1.2); opacity: 0.8; }
         }
 
         .welcome-title-word {
@@ -67,10 +58,7 @@
         }
 
         @keyframes wordReveal {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .welcome-bar {
@@ -82,9 +70,7 @@
         }
 
         @keyframes barFill {
-            to {
-                width: 200px;
-            }
+            to { width: 200px; }
         }
 
         .spin-ring {
@@ -95,9 +81,7 @@
         }
 
         @keyframes spinRing {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
 
         #cursor-glow {
@@ -118,10 +102,7 @@
             transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         .reveal-left {
             opacity: 0;
@@ -129,10 +110,7 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
 
         .reveal-right {
             opacity: 0;
@@ -140,10 +118,7 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
         .typed-cursor {
             display: inline-block;
@@ -156,40 +131,19 @@
         }
 
         @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1
-            }
-
-            50% {
-                opacity: 0
-            }
+            0%, 100% { opacity: 1 }
+            50% { opacity: 0 }
         }
 
-        .float-slow {
-            animation: floatSlow 6s ease-in-out infinite;
-        }
-
-        .float-mid {
-            animation: floatSlow 4s ease-in-out infinite 1s;
-        }
+        .float-slow { animation: floatSlow 6s ease-in-out infinite; }
+        .float-mid { animation: floatSlow 4s ease-in-out infinite 1s; }
 
         @keyframes floatSlow {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
         }
 
-        .count-num {
-            transition: all 0.1s;
-        }
+        .count-num { transition: all 0.1s; }
 
         .card-lift {
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s, box-shadow 0.3s;
@@ -201,9 +155,7 @@
             border-color: rgba(139, 92, 246, 0.6) !important;
         }
 
-        .grad-border {
-            position: relative;
-        }
+        .grad-border { position: relative; }
 
         .grad-border::before {
             content: '';
@@ -218,27 +170,15 @@
             animation: gradShift 3s linear infinite;
         }
 
-        .grad-border:hover::before {
-            opacity: 1;
-        }
+        .grad-border:hover::before { opacity: 1; }
 
         @keyframes gradShift {
-            0% {
-                background-position: 0% 50%
-            }
-
-            50% {
-                background-position: 100% 50%
-            }
-
-            100% {
-                background-position: 0% 50%
-            }
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
         }
 
-        nav a.nav-link {
-            position: relative;
-        }
+        nav a.nav-link { position: relative; }
 
         nav a.nav-link::after {
             content: '';
@@ -253,35 +193,15 @@
             transition: transform 0.25s ease;
         }
 
-        nav a.nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
+        nav a.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
-        .delay-1 {
-            transition-delay: 0.1s !important;
-        }
+        .delay-1 { transition-delay: 0.1s !important; }
+        .delay-2 { transition-delay: 0.2s !important; }
+        .delay-3 { transition-delay: 0.3s !important; }
+        .delay-4 { transition-delay: 0.4s !important; }
+        .delay-5 { transition-delay: 0.5s !important; }
 
-        .delay-2 {
-            transition-delay: 0.2s !important;
-        }
-
-        .delay-3 {
-            transition-delay: 0.3s !important;
-        }
-
-        .delay-4 {
-            transition-delay: 0.4s !important;
-        }
-
-        .delay-5 {
-            transition-delay: 0.5s !important;
-        }
-
-        .section-heading {
-            position: relative;
-            display: inline-block;
-        }
+        .section-heading { position: relative; display: inline-block; }
 
         .section-heading::after {
             content: '';
@@ -294,13 +214,9 @@
             transition: width 1s 0.4s ease;
         }
 
-        .section-heading.visible::after {
-            width: 60%;
-        }
+        .section-heading.visible::after { width: 60%; }
 
-        .form-input {
-            transition: border-color 0.25s, box-shadow 0.25s;
-        }
+        .form-input { transition: border-color 0.25s, box-shadow 0.25s; }
 
         .form-input:focus {
             border-color: #7c3aed !important;
@@ -327,20 +243,11 @@
         }
 
         @keyframes pulsRing {
-            0% {
-                transform: scale(0.95);
-                opacity: 1;
-            }
-
-            100% {
-                transform: scale(1.1);
-                opacity: 0;
-            }
+            0% { transform: scale(0.95); opacity: 1; }
+            100% { transform: scale(1.1); opacity: 0; }
         }
 
-        .tech-tag {
-            transition: background 0.2s, color 0.2s, transform 0.2s;
-        }
+        .tech-tag { transition: background 0.2s, color 0.2s, transform 0.2s; }
 
         .tech-tag:hover {
             background: rgba(124, 58, 237, 0.4) !important;
@@ -348,14 +255,8 @@
             transform: translateY(-2px);
         }
 
-        .proj-thumb {
-            transition: transform 0.4s ease;
-            overflow: hidden;
-        }
-
-        .project-card:hover .proj-thumb {
-            transform: scale(1.04);
-        }
+        .proj-thumb { transition: transform 0.4s ease; overflow: hidden; }
+        .project-card:hover .proj-thumb { transform: scale(1.04); }
 
         #scroll-indicator {
             position: fixed;
@@ -368,10 +269,7 @@
             transition: width 0.1s linear;
         }
 
-        .ripple-btn {
-            position: relative;
-            overflow: hidden;
-        }
+        .ripple-btn { position: relative; overflow: hidden; }
 
         .ripple-btn .ripple-effect {
             position: absolute;
@@ -383,42 +281,21 @@
         }
 
         @keyframes rippleAnim {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
+            to { transform: scale(4); opacity: 0; }
         }
 
         @keyframes commentIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .comment-new {
-            animation: commentIn 0.4s ease forwards;
-        }
+        .comment-new { animation: commentIn 0.4s ease forwards; }
 
-        .icon-spin {
-            animation: iconSpin 1s ease-out;
-        }
+        .icon-spin { animation: iconSpin 1s ease-out; }
 
         @keyframes iconSpin {
-            from {
-                transform: rotate(-180deg) scale(0);
-                opacity: 0;
-            }
-
-            to {
-                transform: rotate(0deg) scale(1);
-                opacity: 1;
-            }
+            from { transform: rotate(-180deg) scale(0); opacity: 0; }
+            to { transform: rotate(0deg) scale(1); opacity: 1; }
         }
 
         .footer-wave {
@@ -431,17 +308,9 @@
         }
 
         /* Certificates: hover zoom + lightbox */
-        .cert-card {
-            cursor: zoom-in;
-        }
-
-        .cert-card img {
-            transition: transform 0.4s ease;
-        }
-
-        .cert-card:hover img {
-            transform: scale(1.12);
-        }
+        .cert-card { cursor: zoom-in; }
+        .cert-card img { transition: transform 0.4s ease; }
+        .cert-card:hover img { transform: scale(1.12); }
 
         .cert-card .zoom-hint {
             position: absolute;
@@ -457,9 +326,7 @@
             pointer-events: none;
         }
 
-        .cert-card:hover .zoom-hint {
-            opacity: 1;
-        }
+        .cert-card:hover .zoom-hint { opacity: 1; }
 
         #lightbox {
             position: fixed;
@@ -474,9 +341,7 @@
             cursor: zoom-out;
         }
 
-        #lightbox.open {
-            display: flex;
-        }
+        #lightbox.open { display: flex; }
 
         #lightbox img {
             max-width: 95vw;
@@ -487,22 +352,12 @@
         }
 
         @keyframes lbIn {
-            from {
-                opacity: 0;
-                transform: scale(0.85);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.85); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
+            *, *::before, *::after {
                 animation-duration: 0.01ms !important;
                 transition-duration: 0.01ms !important;
             }
@@ -520,8 +375,7 @@
 
     <!-- WELCOME SCREEN -->
     <div id="welcome-screen">
-        <div class="spin-ring" style="width:400px;height:400px;--spd:12s;top:50%;left:50%;margin:-200px 0 0 -200px;">
-        </div>
+        <div class="spin-ring" style="width:400px;height:400px;--spd:12s;top:50%;left:50%;margin:-200px 0 0 -200px;"></div>
         <div class="spin-ring"
             style="width:600px;height:600px;--spd:20s;top:50%;left:50%;margin:-300px 0 0 -300px;animation-direction:reverse;">
         </div>
@@ -540,23 +394,19 @@
         </div>
 
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide text-center mb-2">
-            <span
-                class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400"
+            <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400"
                 style="animation-delay:0.3s;">Welcome</span>
-            <span
-                class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400"
+            <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400"
                 style="animation-delay:0.5s;"> To</span>
-            <span
-                class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400"
+            <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400"
                 style="animation-delay:0.7s;"> My</span>
             <br>
-            <span
-                class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-400"
+            <span class="welcome-title-word bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-purple-400"
                 style="animation-delay:0.9s;">Portfolio</span>
         </h1>
 
         <p class="text-purple-400 text-sm mt-4 tracking-widest opacity-0"
-            style="animation: wordReveal 0.5s 1.3s forwards;">Zeinab Khaled</p>
+            style="animation: wordReveal 0.5s 1.3s forwards;">Zeinab Elhusseiny</p>
 
         <div class="mt-8 w-48 h-0.5 bg-purple-950 rounded-full overflow-hidden">
             <div class="welcome-bar"></div>
@@ -569,9 +419,7 @@
         <!-- HEADER -->
         <header
             class="fixed top-0 left-0 w-full z-40 bg-[#0b031a]/80 backdrop-blur-md border-b border-purple-950/40 px-6 py-4 flex justify-between items-center">
-            <div
-                class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500">
-                ZR</div>
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500">ZE</div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
                 <a href="#home" class="nav-link hover:text-purple-400 transition">Home</a>
                 <a href="#about" class="nav-link hover:text-purple-400 transition">About</a>
@@ -620,12 +468,9 @@
                     class="float-slow bg-[#130929]/60 p-8 rounded-3xl border border-purple-900/40 neon-glow max-w-md w-full relative z-10 backdrop-blur-sm reveal-right">
                     <div class="flex items-center justify-between mb-6 border-b border-purple-950 pb-4">
                         <div class="flex gap-2">
-                            <span
-                                class="w-3 h-3 rounded-full bg-red-500 cursor-pointer hover:scale-125 transition-transform"></span>
-                            <span
-                                class="w-3 h-3 rounded-full bg-yellow-500 cursor-pointer hover:scale-125 transition-transform"></span>
-                            <span
-                                class="w-3 h-3 rounded-full bg-green-500 cursor-pointer hover:scale-125 transition-transform"></span>
+                            <span class="w-3 h-3 rounded-full bg-red-500 cursor-pointer hover:scale-125 transition-transform"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500 cursor-pointer hover:scale-125 transition-transform"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500 cursor-pointer hover:scale-125 transition-transform"></span>
                         </div>
                         <i class="fas fa-chart-line text-purple-400 float-mid"></i>
                     </div>
@@ -654,7 +499,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                 <div class="space-y-6 reveal-left">
                     <h3 class="text-2xl font-bold text-white">Hello, I'm </h3>
-                    <span class="text-2xl font-bold text-white">Zeinab Khaled Selim </span>
+                    <span class="text-2xl font-bold text-white">Zeinab Elhusseiny </span>
 
                     <p class="text-gray-400 leading-relaxed text-sm">
                         A <span class="text-purple-400 font-medium">BIS Graduate</span> (Business Information Systems)
@@ -670,7 +515,7 @@
                         new data projects are on the way.
                     </p>
                     <div class="flex gap-4">
-                        <a href="Zeinab_Khaled_CV.pdf" download="Zeinab_Khaled_Data_Analyst_CV"
+                        <a href="Zeinab_Khaled_CV.pdf" download="Zeinab_Elhusseiny_Data_Analyst_CV"
                             class="ripple-btn bg-purple-600 hover:bg-purple-700 text-sm font-semibold px-5 py-2.5 rounded-xl transition flex items-center gap-2 inline-flex">
                             <i class="fas fa-download"></i> Download CV
                         </a>
@@ -688,9 +533,7 @@
                             <div
                                 class="w-full h-full bg-[#0b031a] rounded-full flex items-center justify-center overflow-hidden relative">
                                 <img src="1.jpg" class="w-full h-full object-cover rounded-full">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent pointer-events-none">
-                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent pointer-events-none"></div>
                             </div>
                         </div>
                     </div>
@@ -700,8 +543,7 @@
             <!-- Stats -->
             <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto text-center">
                 <div class="card-lift grad-border bg-[#110624] p-4 rounded-2xl border border-purple-950 reveal delay-1">
-                    <div id="projects-count" class="text-2xl md:text-3xl font-extrabold text-purple-400 count-num">0
-                    </div>
+                    <div id="projects-count" class="text-2xl md:text-3xl font-extrabold text-purple-400 count-num">0</div>
                     <div class="text-xs text-gray-400 mt-1">Projects</div>
                 </div>
                 <div class="card-lift grad-border bg-[#110624] p-4 rounded-2xl border border-purple-950 reveal delay-2">
@@ -721,13 +563,10 @@
         <section id="portfolio" class="py-20 px-6 md:px-20 max-w-7xl mx-auto">
             <div class="text-center space-y-2 mb-12">
                 <h2 class="section-heading reveal text-4xl font-bold">Portfolio Showcase</h2>
-
-
             </div>
 
             <!-- Tabs -->
-            <div
-                class="reveal flex justify-center gap-2 mb-12 bg-[#110624] p-1.5 rounded-xl max-w-md mx-auto border border-purple-950">
+            <div class="reveal flex justify-center gap-2 mb-12 bg-[#110624] p-1.5 rounded-xl max-w-md mx-auto border border-purple-950">
                 <button onclick="switchTab('projects')" id="tab-projects"
                     class="flex-1 py-2 text-sm font-semibold rounded-lg transition-all duration-300 bg-purple-600 text-white flex items-center justify-center gap-2">
                     <i class="fas fa-code-branch"></i> Projects
@@ -743,189 +582,181 @@
             </div>
 
             <!-- Projects grid -->
-            <div id="content-projects" class="grid md:grid-cols-3 gap-6 transition-all duration-500">
+            <div id="content-projects" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500">
 
-                <div
-                    class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-1">
+                <!-- Dubai -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-1">
                     <div class="space-y-3">
-                        <div
-                            class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                        <div class="proj-thumb h-40 rounded-xl mb-4 border border-purple-950">
+                            <img src="dubai.png" alt="Dubai Real Estate" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-lg font-bold">Dubai Real Estate Investment</h4>
+                        <p class="text-xs text-gray-400 line-clamp-3">Ranked 138 area/type/size combinations from 106K Dubai Land Department sales using yield, price growth and liquidity. Python + Power BI.</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-6">
+                        <a href="https://github.com/zeinak112/dubai-real-estate-analytics" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('dubai')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                    </div>
+                </div>
+
+                <!-- HR -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-2">
+                    <div class="space-y-3">
+                        <div class="proj-thumb h-40 rounded-xl mb-4 border border-purple-950">
+                            <img src="hr.png" alt="HR Attrition" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-lg font-bold">HR Attrition Analysis</h4>
+                        <p class="text-xs text-gray-400 line-clamp-3">Why employees leave and who is next: attrition rates in Excel, an explainable logistic regression model and a Power BI risk watchlist.</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-6">
+                        <a href="https://github.com/zeinak112/HR-Attrition-Analysis" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('hr')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                    </div>
+                </div>
+
+                <!-- Superstore -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-3">
+                    <div class="space-y-3">
+                        <div class="proj-thumb h-40 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                            <i class="fas fa-store text-4xl text-emerald-400"></i>
+                            <span class="text-[10px] text-gray-400 font-mono">Excel + Power BI</span>
+                        </div>
+                        <h4 class="text-lg font-bold">Superstore Profitability</h4>
+                        <p class="text-xs text-gray-400 line-clamp-3">Where a retailer loses profit: discounts, categories, regions and products, with Excel and Power BI dashboards.</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-6">
+                        <a href="https://github.com/zeinak112/Superstore-Profitability-Analysis" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('superstore')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                    </div>
+                </div>
+
+                <!-- RFM -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-4">
+                    <div class="space-y-3">
+                        <div class="proj-thumb h-40 rounded-xl mb-4 border border-purple-950">
+                            <img src="rfm.png" alt="RFM Customer Segmentation" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-lg font-bold">RFM Customer Segmentation</h4>
+                        <p class="text-xs text-gray-400 line-clamp-3">Segmented 4,333 customers with SQL RFM scoring, found GBP 659K of revenue at risk and built a marketing playbook. SQL + Python + Tableau.</p>
+                    </div>
+                    <div class="flex justify-between items-center pt-6">
+                        <a href="https://github.com/zeinak112/rfm-customer-segmentation" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('rfm')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
+                    </div>
+                </div>
+
+                <!-- Fitness Tracker (old) -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-1">
+                    <div class="space-y-3">
+                        <div class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
                             <i class="fas fa-dumbbell text-4xl text-purple-400"></i>
                             <span class="text-[10px] text-gray-500 font-mono">Laravel + Node.js + AI</span>
                         </div>
                         <h4 class="text-lg font-bold">AI-Powered Fitness Tracker</h4>
-                        <p class="text-xs text-gray-400 line-clamp-2">An intelligent fitness system with real-time
-                            motion analysis, multi-disciplinary backend architecture, and seamless API integrations.</p>
+                        <p class="text-xs text-gray-400 line-clamp-3">An intelligent fitness system with real-time motion analysis, multi-disciplinary backend architecture, and seamless API integrations.</p>
                     </div>
                     <div class="flex justify-between items-center pt-6">
-                        <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
-                        <button onclick="openProjectDetail('fitness')"
-                            class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details
-                            →</button>
+                        <a href="https://github.com/zeinak112/gp-backend" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('fitness')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
                     </div>
                 </div>
 
-                <div
-                    class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-2">
+                <!-- E-Commerce (old) -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-2">
                     <div class="space-y-3">
-                        <div
-                            class="proj-thumb h-40 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 p-4 text-center gap-2">
+                        <div class="proj-thumb h-40 bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 p-4 text-center gap-2">
                             <i class="fas fa-shopping-cart text-3xl text-indigo-400"></i>
                             <p class="text-[10px] font-semibold text-purple-300 font-mono">PHP + Laravel + MySQL</p>
                         </div>
                         <h4 class="text-lg font-bold">Full-Stack E-Commerce Platform</h4>
-                        <p class="text-xs text-gray-400 line-clamp-2">A complete commercial e-commerce engine featuring
-                            secure payment checkouts, advanced cart management, and full business logic infrastructure.
-                        </p>
+                        <p class="text-xs text-gray-400 line-clamp-3">A complete commercial e-commerce engine featuring secure payment checkouts, advanced cart management, and full business logic infrastructure.</p>
                     </div>
                     <div class="flex justify-between items-center pt-6">
-                        <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
-                        <button onclick="openProjectDetail('ecommerce')"
-                            class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details
-                            →</button>
+                        <a href="https://github.com/zeinak112/ecommerce-native-php" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('ecommerce')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
                     </div>
                 </div>
 
-                <div
-                    class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-3">
+                <!-- Logistics (old) -->
+                <div class="project-card card-lift grad-border bg-[#110624]/80 rounded-2xl border border-purple-950 p-5 flex flex-col justify-between reveal delay-3">
                     <div class="space-y-3">
-                        <div
-                            class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
+                        <div class="proj-thumb h-40 bg-purple-950/40 rounded-xl mb-4 flex flex-col items-center justify-center border border-purple-950 gap-2">
                             <i class="fas fa-chart-pie text-4xl text-amber-400"></i>
                             <span class="text-[10px] text-gray-500 font-mono">B2B API + Analytics</span>
                         </div>
                         <h4 class="text-lg font-bold">Logistics & Analytics API</h4>
-                        <p class="text-xs text-gray-400 line-clamp-2">A high-throughput B2B shipping integration API
-                            built to stress-test 5,000+ records, generating automated Excel reports and webhooks.</p>
+                        <p class="text-xs text-gray-400 line-clamp-3">A high-throughput B2B shipping integration API built to stress-test 5,000+ records, generating automated Excel reports and webhooks.</p>
                     </div>
                     <div class="flex justify-between items-center pt-6">
-                        <button class="text-xs text-purple-400 font-medium hover:underline">Live Demo ↗</button>
-                        <button onclick="openProjectDetail('logistics')"
-                            class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details
-                            →</button>
+                        <a href="https://github.com/zeinak112/logistics-analytics-api" target="_blank" class="text-xs text-purple-400 font-medium hover:underline">GitHub ↗</a>
+                        <button onclick="openProjectDetail('logistics')" class="ripple-btn text-xs bg-purple-900/30 text-purple-300 px-3 py-1.5 rounded-lg border border-purple-900/40 hover:bg-purple-900/60 transition">Details →</button>
                     </div>
                 </div>
             </div>
 
             <!-- Certificates (cards are generated by JS from the list in the script below) -->
-            <div id="content-certificates"
-                class="grid grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 hidden"></div>
+            <div id="content-certificates" class="grid grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 hidden"></div>
 
             <!-- Skills -->
             <div id="content-tech" class="grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-500 hidden">
 
-                <h4 class="col-span-full text-sm font-bold text-purple-400 tracking-wide flex items-center gap-2"><i
-                        class="fas fa-chart-line"></i> Data Analysis</h4>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fas fa-file-excel text-green-400 text-xl"></i><span
-                        class="text-sm font-medium">Excel</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fas fa-chart-column text-yellow-400 text-xl"></i><span class="text-sm font-medium">Power
-                        BI</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
-                    <i class="fas fa-table-cells text-blue-400 text-xl"></i><span
-                        class="text-sm font-medium">Tableau</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
-                    <i class="fab fa-python text-amber-300 text-xl"></i><span class="text-sm font-medium">Python
-                        (Pandas)</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fas fa-database text-blue-400 text-xl"></i><span class="text-sm font-medium">SQL</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fab fa-google text-red-400 text-xl"></i><span class="text-sm font-medium">Google Looker
-                        Studio</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
-                    <i class="fas fa-broom text-purple-400 text-xl"></i><span class="text-sm font-medium">Data
-                        Cleaning</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
-                    <i class="fas fa-chart-pie text-pink-400 text-xl"></i><span class="text-sm font-medium">Data
-                        Visualization</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fas fa-file-lines text-green-400 text-xl"></i><span class="text-sm font-medium">Google
-                        Sheets</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fas fa-magnifying-glass-chart text-orange-400 text-xl"></i><span
-                        class="text-sm font-medium">Google Analytics</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
-                    <i class="fas fa-square-root-variable text-purple-400 text-xl"></i><span
-                        class="text-sm font-medium">Statistical Analysis</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
-                    <i class="fas fa-binoculars text-cyan-400 text-xl"></i><span class="text-sm font-medium">Exploratory
-                        Data Analysis (EDA)</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fas fa-book-open text-pink-400 text-xl"></i><span class="text-sm font-medium">Data
-                        Storytelling</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fas fa-flask text-emerald-400 text-xl"></i><span class="text-sm font-medium">A/B
-                        Testing</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
-                    <i class="fas fa-cube text-blue-400 text-xl"></i><span class="text-sm font-medium">NumPy</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
-                    <i class="fas fa-chart-simple text-teal-400 text-xl"></i><span
-                        class="text-sm font-medium">Seaborn</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fas fa-chart-area text-amber-400 text-xl"></i><span
-                        class="text-sm font-medium">Matplotlib</span></div>
+                <h4 class="col-span-full text-sm font-bold text-purple-400 tracking-wide flex items-center gap-2"><i class="fas fa-chart-line"></i> Data Analysis</h4>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fas fa-file-excel text-green-400 text-xl"></i><span class="text-sm font-medium">Excel</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fas fa-chart-column text-yellow-400 text-xl"></i><span class="text-sm font-medium">Power BI</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
+                    <i class="fas fa-table-cells text-blue-400 text-xl"></i><span class="text-sm font-medium">Tableau</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
+                    <i class="fab fa-python text-amber-300 text-xl"></i><span class="text-sm font-medium">Python (Pandas)</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fas fa-database text-blue-400 text-xl"></i><span class="text-sm font-medium">SQL</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fab fa-google text-red-400 text-xl"></i><span class="text-sm font-medium">Google Looker Studio</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
+                    <i class="fas fa-broom text-purple-400 text-xl"></i><span class="text-sm font-medium">Data Cleaning</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
+                    <i class="fas fa-chart-pie text-pink-400 text-xl"></i><span class="text-sm font-medium">Data Visualization</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fas fa-file-lines text-green-400 text-xl"></i><span class="text-sm font-medium">Google Sheets</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fas fa-magnifying-glass-chart text-orange-400 text-xl"></i><span class="text-sm font-medium">Google Analytics</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
+                    <i class="fas fa-square-root-variable text-purple-400 text-xl"></i><span class="text-sm font-medium">Statistical Analysis</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
+                    <i class="fas fa-binoculars text-cyan-400 text-xl"></i><span class="text-sm font-medium">Exploratory Data Analysis (EDA)</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fas fa-book-open text-pink-400 text-xl"></i><span class="text-sm font-medium">Data Storytelling</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fas fa-flask text-emerald-400 text-xl"></i><span class="text-sm font-medium">A/B Testing</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
+                    <i class="fas fa-cube text-blue-400 text-xl"></i><span class="text-sm font-medium">NumPy</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
+                    <i class="fas fa-chart-simple text-teal-400 text-xl"></i><span class="text-sm font-medium">Seaborn</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fas fa-chart-area text-amber-400 text-xl"></i><span class="text-sm font-medium">Matplotlib</span></div>
 
-                <h4 class="col-span-full text-sm font-bold text-purple-400 tracking-wide flex items-center gap-2 mt-4">
-                    <i class="fas fa-server"></i> Backend</h4>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                <h4 class="col-span-full text-sm font-bold text-purple-400 tracking-wide flex items-center gap-2 mt-4"><i class="fas fa-server"></i> Backend</h4>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
                     <i class="fab fa-php text-indigo-400 text-xl"></i><span class="text-sm font-medium">PHP</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fas fa-fire text-red-400 text-xl"></i><span class="text-sm font-medium">Laravel</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
-                    <i class="fas fa-cubes text-purple-400 text-xl"></i><span class="text-sm font-medium">OOP</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
-                    <i class="fab fa-js text-yellow-400 text-xl"></i><span class="text-sm font-medium">JavaScript</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fab fa-html5 text-orange-400 text-xl"></i><span class="text-sm font-medium">HTML &
-                        CSS</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fas fa-plug text-purple-400 text-xl"></i><span class="text-sm font-medium">REST
-                        APIs</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
-                    <i class="fab fa-linux text-gray-300 text-xl"></i><span class="text-sm font-medium">Linux /
-                        Server</span></div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
-                    <i class="fab fa-docker text-blue-500 text-xl"></i><span class="text-sm font-medium">Docker</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
-                    <i class="fab fa-git-alt text-orange-500 text-xl"></i><span class="text-sm font-medium">Git</span>
-                </div>
-                <div
-                    class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
-                    <i class="fab fa-node-js text-green-500 text-xl"></i><span
-                        class="text-sm font-medium">Node.js</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fas fa-fire text-red-400 text-xl"></i><span class="text-sm font-medium">Laravel</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
+                    <i class="fas fa-cubes text-purple-400 text-xl"></i><span class="text-sm font-medium">OOP</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
+                    <i class="fab fa-js text-yellow-400 text-xl"></i><span class="text-sm font-medium">JavaScript</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fab fa-html5 text-orange-400 text-xl"></i><span class="text-sm font-medium">HTML & CSS</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fas fa-plug text-purple-400 text-xl"></i><span class="text-sm font-medium">REST APIs</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-3">
+                    <i class="fab fa-linux text-gray-300 text-xl"></i><span class="text-sm font-medium">Linux / Server</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-4">
+                    <i class="fab fa-docker text-blue-500 text-xl"></i><span class="text-sm font-medium">Docker</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-1">
+                    <i class="fab fa-git-alt text-orange-500 text-xl"></i><span class="text-sm font-medium">Git</span></div>
+                <div class="card-lift grad-border bg-[#110624] p-4 rounded-xl border border-purple-950 flex items-center gap-3 reveal delay-2">
+                    <i class="fab fa-node-js text-green-500 text-xl"></i><span class="text-sm font-medium">Node.js</span></div>
             </div>
 
             <!-- Project detail panel -->
@@ -938,7 +769,7 @@
                 <div class="grid md:grid-cols-2 gap-10">
                     <div class="space-y-6">
                         <h3 id="detail-title" class="text-3xl font-extrabold text-white">Project</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">A backend project built with Laravel & PHP.</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">A data analytics project.</p>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="card-lift bg-[#0b031a] p-4 rounded-xl border border-purple-950/60">
                                 <span class="text-2xl font-bold text-purple-400">5+</span>
@@ -950,9 +781,8 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <button
-                                class="ripple-btn bg-purple-600 hover:bg-purple-700 text-xs font-semibold px-4 py-2.5 rounded-xl transition">Live
-                                Demo</button>
+                            <a id="detail-demo" href="#" target="_blank"
+                                class="ripple-btn bg-purple-600 hover:bg-purple-700 text-xs font-semibold px-4 py-2.5 rounded-xl transition">Demo</a>
                             <a id="detail-github" href="#" target="_blank"
                                 class="ripple-btn bg-[#160b2d] border border-purple-900/40 text-xs font-semibold px-4 py-2.5 rounded-xl text-gray-300 hover:bg-[#211044] transition flex items-center gap-2">
                                 <i class="fab fa-github"></i> GitHub
@@ -961,10 +791,9 @@
                     </div>
                     <div class="space-y-6">
                         <div class="bg-[#0b031a] p-6 rounded-2xl border border-purple-950/60">
-                            <h5 class="text-sm font-bold text-purple-400 mb-4 flex items-center gap-2"><i
-                                    class="fas fa-star text-xs"></i> Key Features</h5>
+                            <h5 class="text-sm font-bold text-purple-400 mb-4 flex items-center gap-2"><i class="fas fa-star text-xs"></i> Key Features</h5>
                             <ul class="text-xs text-gray-300 space-y-3 list-disc pl-4">
-                                <li>Clean and well-structured backend architecture.</li>
+                                <li>Clean and well-structured analysis.</li>
                             </ul>
                         </div>
                         <div>
@@ -982,8 +811,7 @@
         <section id="contact" class="py-20 px-6 md:px-20 max-w-7xl mx-auto">
             <div class="text-center space-y-2 mb-16">
                 <h2 class="section-heading reveal text-4xl font-bold text-white">Contact Me</h2>
-                <p class="reveal delay-1 text-gray-400 text-sm">Have a project in mind or want to collaborate? Let's
-                    talk!</p>
+                <p class="reveal delay-1 text-gray-400 text-sm">Have a project in mind or want to collaborate? Let's talk!</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-start">
@@ -999,8 +827,7 @@
                                 class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-600 transition"></textarea>
                             <button type="submit"
                                 class="ripple-btn w-full bg-purple-600 hover:bg-purple-700 text-sm font-semibold py-3 rounded-xl transition flex items-center justify-center gap-2 text-white">
-                                <span id="send-text">Send Message</span> <i class="fas fa-paper-plane text-xs"
-                                    id="send-icon"></i>
+                                <span id="send-text">Send Message</span> <i class="fas fa-paper-plane text-xs" id="send-icon"></i>
                             </button>
                         </form>
                     </div>
@@ -1024,36 +851,28 @@
                     </div>
                 </div>
 
-                <div
-                    class="bg-[#110624]/60 p-6 rounded-2xl border border-purple-950 backdrop-blur-sm space-y-6 reveal-right">
+                <div class="bg-[#110624]/60 p-6 rounded-2xl border border-purple-950 backdrop-blur-sm space-y-6 reveal-right">
                     <div class="flex justify-between items-center border-b border-purple-950 pb-3">
-                        <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="far fa-comments"></i>
-                            Comments</h3>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2"><i class="far fa-comments"></i> Comments</h3>
                         <span id="comment-count"
                             class="bg-purple-900/50 border border-purple-900 text-purple-300 text-xs px-2 py-0.5 rounded-full font-bold transition-all duration-300">1</span>
                     </div>
                     <div id="comments-list" class="space-y-4 max-h-60 overflow-y-auto pr-2">
-                        <div
-                            class="comment-item bg-[#0b031a] p-4 rounded-xl border border-purple-950/60 flex justify-between items-start">
+                        <div class="comment-item bg-[#0b031a] p-4 rounded-xl border border-purple-950/60 flex justify-between items-start">
                             <div class="flex gap-3 items-start">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-purple-900 flex items-center justify-center text-xs font-bold text-purple-300">
-                                    Z</div>
+                                <div class="w-8 h-8 rounded-full bg-purple-900 flex items-center justify-center text-xs font-bold text-purple-300">Z</div>
                                 <div>
                                     <div class="flex items-center gap-2">
                                         <span class="text-xs font-bold text-white">Zeinab</span>
-                                        <span
-                                            class="bg-purple-900/40 text-purple-400 text-[10px] px-1.5 rounded border border-purple-900/30">Owner</span>
+                                        <span class="bg-purple-900/40 text-purple-400 text-[10px] px-1.5 rounded border border-purple-900/30">Owner</span>
                                     </div>
-                                    <p class="text-xs text-gray-400 mt-1">Welcome to my portfolio! Feel free to reach
-                                        out 🚀</p>
+                                    <p class="text-xs text-gray-400 mt-1">Welcome to my portfolio! Feel free to reach out 🚀</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <form id="comment-form" onsubmit="addComment(event)"
-                        class="space-y-3 pt-4 border-t border-purple-950">
+                    <form id="comment-form" onsubmit="addComment(event)" class="space-y-3 pt-4 border-t border-purple-950">
                         <input type="text" id="comment-name" placeholder="Name *" required
                             class="form-input w-full bg-[#0b031a] border border-purple-950 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-purple-600">
                         <textarea id="comment-msg" placeholder="Write your message here... *" required rows="3"
@@ -1077,7 +896,7 @@
         <!-- FOOTER -->
         <footer class="relative py-8 text-center text-xs text-gray-500 border-t border-purple-950/40 bg-[#06020f]">
             <div class="footer-wave"></div>
-            &copy; 2026 Zeinab Khaled Selim. All Rights Reserved. <span class="text-purple-600">✦</span>
+            &copy; 2026 Zeinab Elhusseiny. All Rights Reserved. <span class="text-purple-600">✦</span>
         </footer>
 
     </div>
@@ -1087,7 +906,6 @@
         const certFiles = ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8'];
 
         document.addEventListener("DOMContentLoaded", () => {
-            // Build certificate cards first so the counter can count them
             const certGrid = document.getElementById('content-certificates');
             certFiles.forEach((f, i) => {
                 const card = document.createElement('div');
@@ -1229,12 +1047,68 @@
         }
 
         const projectData = {
+            dubai: {
+                title: "Dubai Real Estate Investment Analysis",
+                description: "A data-driven case study on where an investor should buy in Dubai. I cleaned 106,287 residential sales and 529,165 rent contracts from Dubai Land Department data (Jan–Sep 2026) with Python, then ranked 138 Area × Type × Size groups with a transparent Investment Score (yield, price growth, liquidity) in an interactive Power BI dashboard.",
+                techCount: "3", featuresCount: "4",
+                github: "https://github.com/zeinak112/dubai-real-estate-analytics",
+                demo: "",
+                features: [
+                    "Reproducible Python pipeline with data-quality checks and an area crosswalk to link rents to sales.",
+                    "Gross yield, same-project price growth and a 0–100 Investment Score, tested with a sensitivity check.",
+                    "Findings: small flats yield most (7.7% under 50 sqm), and yield and momentum pull in opposite directions.",
+                    "Power BI dashboard with budget, size and area filters plus ranked recommendations."
+                ],
+                tags: ["Python", "Pandas", "NumPy", "Power BI", "DAX", "GitHub"]
+            },
+            hr: {
+                title: "HR Attrition Analysis",
+                description: "An HR case study on why employees leave and who is likely to leave next. Attrition is measured as a rate with group size in Excel, then an explainable logistic regression model scores each employee, and a Power BI dashboard delivers a ranked stay-interview watchlist.",
+                techCount: "4", featuresCount: "4",
+                github: "https://github.com/zeinak112/HR-Attrition-Analysis",
+                demo: "https://lnkd.in/p/eawHcDRw",
+                features: [
+                    "Excel Table with formula-driven groups, small-sample warnings and conditional formatting.",
+                    "Overtime is the strongest signal: 30.5% attrition vs 10.4% without overtime.",
+                    "Logistic regression (ROC-AUC 0.80) with out-of-fold risk scores; top 10% risk group had a 64.6% real attrition rate.",
+                    "Power BI dashboard with a what-if replacement cost and 52 active high-risk employees."
+                ],
+                tags: ["Excel", "Python", "scikit-learn", "Power BI", "DAX", "Logistic Regression"]
+            },
+            superstore: {
+                title: "Superstore Profitability Analysis",
+                description: "A business-focused case study on where a retailer loses profit. I analysed 9,993 order lines (2014–2017) with Power Query, Pivot Tables and Power BI to find how discounts, categories, regions and products drive profit and loss.",
+                techCount: "5", featuresCount: "4",
+                github: "https://github.com/zeinak112/Superstore-Profitability-Analysis",
+                demo: "",
+                features: [
+                    "Furniture sells $741.7K but earns only a 2.5% margin, vs about 17% for Technology and Office Supplies.",
+                    "Lines discounted above 20% lost $135K combined; lines at 20% or below earned $421.8K.",
+                    "Ten states lose money, and the Central region has a 7.9% margin vs 14.9% in the West.",
+                    "Excel dashboard and a 3-page Power BI report with business recommendations."
+                ],
+                tags: ["Excel", "Power Query", "Pivot Tables", "Power BI", "DAX", "GitHub"]
+            },
+            rfm: {
+                title: "Customer Behavior Analysis & RFM Segmentation",
+                description: "An RFM segmentation and retention case study on 390K e-commerce transactions. The RFM model is written entirely in SQL, validated against source totals, and turned into a segment-by-segment marketing playbook with an interactive Tableau dashboard.",
+                techCount: "4", featuresCount: "4",
+                github: "https://github.com/zeinak112/rfm-customer-segmentation",
+                demo: "https://public.tableau.com/app/profile/zeinab.selim/viz/ExecutiveRFMCustomerIntelligenceDashboard/ExecutiveRFMCustomerIntelligenceDashboard",
+                features: [
+                    "Top 20% of customers generate 73.9% of revenue; Champions are 23.2% of customers and 66.3% of revenue.",
+                    "401 At Risk and Can't Lose Them customers hold GBP 659K of historical revenue.",
+                    "SQL pipeline with window functions, PERCENT_RANK scoring, Pareto and cohort retention.",
+                    "Playbook with an action and KPI for each of 8 segments, plus an A/B test plan."
+                ],
+                tags: ["SQL", "Python", "Tableau", "SQLite", "Window Functions", "Cohort Analysis"]
+            },
             fitness: {
                 title: "AI-Powered Fitness Tracker",
                 description: "An advanced fitness tracking application developed as a major graduation project. It leverages real-time motion analysis to correct exercise form instantly. Built with a multi-disciplinary approach, combining a high-performance backend with external services for cutting-edge user experiences.",
-                techCount: "4+",
-                featuresCount: "3",
+                techCount: "4+", featuresCount: "3",
                 github: "https://github.com/zeinak112/gp-backend",
+                demo: "",
                 features: [
                     "Real-time form correction integration using motion data analysis.",
                     "Multi-disciplinary architecture coordinating Laravel APIs and external microservices.",
@@ -1245,9 +1119,9 @@
             ecommerce: {
                 title: "Full-Stack E-Commerce Platform",
                 description: "A complete commercial web application designed to simulate real-world e-commerce ecosystems. It handles everything from complex shopping cart structures to secure order generation, focusing heavily on clean business logic and secure database design.",
-                techCount: "5+",
-                featuresCount: "4",
+                techCount: "5+", featuresCount: "4",
                 github: "https://github.com/zeinak112/ecommerce-native-php",
+                demo: "",
                 features: [
                     "Complete product catalog with dynamic filtering and categorization.",
                     "Advanced database structure handling user transactions, pricing, and histories securely.",
@@ -1258,9 +1132,9 @@
             logistics: {
                 title: "Logistics & Analytics API Engine",
                 description: "A specialized B2B logistics and analytics service built to receive external automated orders from platforms like WordPress and Shopify via high-performance APIs. Engineered to handle large-scale database stresses and output advanced administrative data visualizations.",
-                techCount: "6+",
-                featuresCount: "4",
+                techCount: "6+", featuresCount: "4",
                 github: "https://github.com/zeinak112/logistics-analytics-api",
+                demo: "",
                 features: [
                     "Seamless third-party API webhook ingestion designed for massive order scale.",
                     "Stress-tested database design capable of handling 5,000+ heavy record entries efficiently.",
@@ -1286,6 +1160,10 @@
 
                 const githubLink = document.getElementById('detail-github');
                 githubLink.setAttribute('href', project.github);
+
+                const demoLink = document.getElementById('detail-demo');
+                if (project.demo) { demoLink.setAttribute('href', project.demo); demoLink.classList.remove('hidden'); }
+                else { demoLink.classList.add('hidden'); }
 
                 document.querySelector('#project-detail-panel ul').innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
                 document.querySelector('#project-detail-panel .flex-wrap').innerHTML = project.tags.map(t => `<span class="tech-tag bg-[#1b0e35] text-purple-300 text-xs px-3 py-1.5 rounded-lg border border-purple-950">${t}</span>`).join('');
