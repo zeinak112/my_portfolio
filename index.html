@@ -419,7 +419,7 @@
         <!-- HEADER -->
         <header
             class="fixed top-0 left-0 w-full z-40 bg-[#0b031a]/80 backdrop-blur-md border-b border-purple-950/40 px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500">ZE</div>
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500">ZR</div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
                 <a href="#home" class="nav-link hover:text-purple-400 transition">Home</a>
                 <a href="#about" class="nav-link hover:text-purple-400 transition">About</a>
@@ -1018,6 +1018,7 @@
             const btn = e.target.closest('.ripple-btn');
             if (!btn) return;
             const rect = btn.getBoundingClientRect();
+
             const r = document.createElement('span');
             r.className = 'ripple-effect';
             const size = Math.max(rect.width, rect.height);
